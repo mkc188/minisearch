@@ -2,7 +2,8 @@
 .DS_Store
 /closet
 /tmp
-/dist
+#/dist
 /examples/dist
 /examples/node_modules
 /coverage
+/v8-compile-cache-0

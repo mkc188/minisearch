@@ -514,7 +514,9 @@ class MiniSearch {
     const results = [exactMatch]
 
     if (query.prefix) {
+      var i = 0;
       this._index.atPrefix(query.term).forEach((term, data) => {
+        if (++i > 50) return
         const weightedDistance = (0.3 * (term.length - query.term.length)) / term.length
         results.push(termResults(this, term, boosts, boostDocument, data, prefixWeight, weightedDistance))
       })
