@@ -1237,7 +1237,7 @@ function () {
       fields.filter(function (field) {
         return document[field] != null;
       }).forEach(function (field) {
-        tokenize(document[field]).forEach(function (term) {
+        tokenize(document[field], field).forEach(function (term) {
           var processedTerm = processTerm(term);
 
           if (isTruthy(processedTerm)) {
